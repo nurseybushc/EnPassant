@@ -1,7 +1,7 @@
 import 'package:en_passant/model/app_model.dart';
 import 'package:en_passant/views/components/shared/rounded_button.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../chess_view.dart';
 import '../../settings_view.dart';
@@ -65,8 +65,8 @@ class MainMenuButtons extends StatelessWidget {
 
   void _openGitHub() async {
     const url = 'https://github.com/PScottZero/EnPassant';
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
     } else {
       throw 'Could not launch $url';
     }
